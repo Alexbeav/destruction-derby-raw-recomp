@@ -1,0 +1,56 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Destruction Derby Raw"
+id = "SLUS-00912"
+players = 2
+exe = "disc/SLUS_009.12"
+disc = "disc/Destruction Derby Raw (USA).cue"
+load_address = "0x80010000"
+entry_pc = "0x80010C5C"
+text_size = "0x00012800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Destruction Derby Raw (USA) (Track 01).bin"
+cue_name = "Destruction Derby Raw (USA).cue"
+boot_exe = "SLUS_009.12"
+known_sizes = [275134608]
+known_md5 = [
+  "04fcfee8157a995e7f643ea71e962fe1",
+]
+known_sha1 = [
+  "131463c47379b9a38888f548a44f43dcc6e7f959",
+]
+known_crc32 = [
+  "96f0a761",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+window_title = "Destruction Derby Raw Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 13
+required_disc_fp = "af838443b133796d3fc6a96b3430283d1d3d190c053fbe2ea97d11a08f6b7832"

@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Destruction Derby Raw",
+    "id": "SLUS-00912",
+    "boot_exe": "SLUS_009.12"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 2
+  },
+  "rom_identity": {
+    "cue_name": "Destruction Derby Raw (USA).cue",
+    "bin_name": "Destruction Derby Raw (USA) (Track 01).bin",
+    "track_counts": [
+      13
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 275134608,
+      "md5": "04fcfee8157a995e7f643ea71e962fe1",
+      "sha1": "131463c47379b9a38888f548a44f43dcc6e7f959",
+      "crc32": "96f0a761"
+    },
+    "disc_fp": "af838443b133796d3fc6a96b3430283d1d3d190c053fbe2ea97d11a08f6b7832"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80010C5C",
+    "text_size": "0x00012800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 107,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
